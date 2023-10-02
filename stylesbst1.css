@@ -1,0 +1,22 @@
+.middle{
+    justify-content:center;
+    padding-top:10px;
+    padding-left:600px;
+    font-size:large;
+}
+.sidecontainer{
+    text-align:center;
+    justify-content:center;
+    padding-top: 10px;
+    padding-left:110px;
+    padding-right:110px;
+    padding-bottom:39%;
+    background-color:rgb(107, 107, 107);
+    color:white;
+    font-size:large;
+}
+
+.both{
+    display:flex;
+    justify-content:space-between;
+}

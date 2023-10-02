@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js task-7</title>
+    <style>
+        .con {
+            height: 400px;
+            width: 1500px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #start {
+            margin-left: 350px;
+        }
+
+        #stop {
+            margin-left: 50px;
+        }
+
+        #imgg {
+            height: 150px;
+            margin-top: 150px;
+            position: absolute;
+        }
+        #start{
+            background-color:lightgrey;
+            padding: 10px;
+
+        }
+        #stop{
+            background-color:lightgrey;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <img src="trainbst7.jpg" id="imgg">
+    </div>
+    <button id="start" onclick="start()">Start</button>
+    <button id="stop" onclick="stop()">Stop</button>
+    <script>
+        var train = document.getElementById("imgg");
+        var startbtn = document.getElementById('start');
+        var stopbtn = document.getElementById('stop');
+        let animationId;
+
+        function start() {
+            let position = 0;
+            const speed = 2;
+
+            function move() {
+                position += speed;
+                train.style.left = position + 'px';
+
+                if (position < 1500 ) {
+                    animationId = requestAnimationFrame(move);
+                }
+            }
+
+            animationId = requestAnimationFrame(move);
+        }
+
+        function stop() {
+            cancelAnimationFrame(animationId);
+        }
+
+        startbtn.addEventListener('click', start);
+        stopbtn.addEventListener('click', stop);
+    </script>
+</body>
+</html>
